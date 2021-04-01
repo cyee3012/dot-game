@@ -1,8 +1,8 @@
 o // make dot in html
 o // hide dot in css on click
 o // JS to make dots vary in sizes (from 10px to 50px)
-// JS to make score of dots to value from 1 to 10 points
-// make game container (make sure dots fill fully horizontally)
+o // JS to make score of dots to value from 1 to 10 points
+o // make game container (make sure dots fill fully horizontally)
 // make score total bar with toggle speed button and pause button
 // JS to make dots move from bottom of container to top
 // JS to make dots appear in 1 sec intervals
