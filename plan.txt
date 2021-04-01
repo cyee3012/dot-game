@@ -4,7 +4,7 @@ o // JS to make dots vary in sizes (from 10px to 50px)
 o // JS to make score of dots to value from 1 to 10 points
 o // make game container (make sure dots fill fully horizontally)
 // make score total bar with toggle speed button and pause button
-// JS to make dots move from bottom of container to top
+o // JS to make dots move from bottom of container to top
 // JS to make dots appear in 1 sec intervals
 // JS to make dots disappear on click, points to be added to total bar
 // JS to pause the game

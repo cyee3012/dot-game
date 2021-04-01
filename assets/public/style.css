@@ -12,6 +12,13 @@ h1 {
   position: relative;
 }
 
+.bar {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 .dot {
   height: 10px;
   width: 10px;

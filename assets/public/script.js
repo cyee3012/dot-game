@@ -7,11 +7,12 @@ dot.style.height = dot.style.width;
 
 console.log(diameter);
 
-position = 0
-setInterval(function(){
-  newPositon = position += 1
-  dot.style.bottom = newPositon +"px";
-}, 1000);
+// dot moves from bottom to top
+// position = 0
+// setInterval(function(){
+//   newPositon = position += 1
+//   dot.style.bottom = newPositon +"px";
+// }, 100);
 
 //makes points inversely proportional to the dot size (range from 1-10 points)
 // -1px = +0.225 points
@@ -25,8 +26,3 @@ console.log(points.innerText);
 dot.addEventListener('click', () => {
   dot.style.display = 'none';
 });
-
-// moving the dot
-const move = () => {
-  speed = 1;
-};
