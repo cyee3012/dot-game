@@ -2,6 +2,7 @@ const dot = document.querySelector('.dot');
 const score = document.querySelector('.score');
 const speed = document.querySelector('.speed');
 const pause = document.querySelector('.pause');
+const gameContainer = document.querySelector('.game-container');
 
 // makes dot random size between 10-50px;
 const diameter = 10 + Math.floor(Math.random() * 40);
@@ -25,12 +26,20 @@ speed.addEventListener('click', () => {
   }
 });
 
+
 // dot moves from bottom to top
 position = 0;
   const moveDot = setInterval(function() {
   newPositon = position += speedSetting;
   dot.style.bottom = newPositon +"px";
 }, 100);
+
+// duplicate dot
+const moreDots = dot.cloneNode(true);
+
+const dotsAppear = setInterval(function() {
+  gameContainer.appendChild(moreDots);
+}, 1000);
 
 // pause game
 pause.addEventListener('click', () => {
@@ -55,6 +64,7 @@ const points = document.querySelector('.points');
 pointsAmount = 1 + (50 - diameter) * 0.225;
 points.innerText = `${Math.round(pointsAmount)}`;
 console.log(points.innerText);
+
 
 dot.addEventListener('click', () => {
   dot.style.display = 'none';

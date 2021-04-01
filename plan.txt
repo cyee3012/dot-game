@@ -7,10 +7,11 @@ o // make score total bar with toggle speed button and pause button
 o // JS to make dots move from bottom of container to top
 // JS to make dots appear in 1 sec intervals
 o // JS to make dots disappear on click, points to be added to total bar
-// JS to pause the game
+o // JS to pause the game
 o // JS to toggle the speed
 
 
 time tally
 - psuedo coded for 10 mins
-- 4.5 hours (thurs)
+- 30 mins of maths
+- 5 hours (thurs)
