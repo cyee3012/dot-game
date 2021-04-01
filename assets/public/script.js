@@ -1,4 +1,5 @@
 const dot = document.querySelector('.dot');
+const score = document.querySelector('.score');
 
 // makes dot random size between 10-50px;
 const diameter = 10 + Math.floor(Math.random() * 40);
@@ -25,4 +26,5 @@ console.log(points.innerText);
 
 dot.addEventListener('click', () => {
   dot.style.display = 'none';
+  score.innerText = `score: ${points.innerText}`
 });
