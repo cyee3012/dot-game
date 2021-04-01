@@ -8,9 +8,9 @@ o // JS to make dots move from bottom of container to top
 // JS to make dots appear in 1 sec intervals
 o // JS to make dots disappear on click, points to be added to total bar
 // JS to pause the game
-// JS to toggle the speed
+o // JS to toggle the speed
 
 
 time tally
 - psuedo coded for 10 mins
-- 4 hours (thurs)
+- 4.5 hours (thurs)
