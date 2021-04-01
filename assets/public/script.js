@@ -23,20 +23,23 @@ speed.addEventListener('click', () => {
 // makes dot random size between 10-50px;
 const movingDot = (dot) => {
   let diameter = 10 + Math.floor(Math.random() * 41);
-  let xPosition = Math.floor(Math.random() * (300 - (diameter)));
+  let xPosition = Math.floor(Math.random() * (301 - (diameter)));
+  let yPosition = Math.floor(Math.random() * (1 - (diameter)));
+  console.log(yPosition)
   dot.style.display = 'block';
   dot.style.width = `${diameter}px`;
   dot.style.height = dot.style.width;
   dot.style.left = `${xPosition}px`;
+  dot.style.bottom = `${yPosition}px`;
   console.log(xPosition);
   console.log(diameter);
 
   // dot moves from bottom to top
-  position = 0;
+  position = yPosition;
     const moveDot = setInterval(function() {
     newPositon = position += speedSetting;
     dot.style.bottom = newPositon +"px";
-  }, 100);
+  }, 5000);
 
   //makes points inversely proportional to the dot size (range from 1-10 points)
   // -1px = +0.225 points. 50 - diameter = pointIncrement * 0.225 (+1 to include 50px and 10 px)
@@ -47,20 +50,17 @@ const movingDot = (dot) => {
   // click to make dot disappear
   dot.addEventListener('click', () => {
     dot.style.display = 'none';
-    score.innerText = `score: ${points.innerText}`;
+    score.innerText = `${parseInt(score.innerText)+parseInt(points.innerText)}`;
     dot.style.bottom = 0;
     clearInterval(moveDot);
   });
 };
 
 // // duplicate dot
+const dotsAppear = setInterval(function() {
   let moreDots = dot.cloneNode(true);
   newDot = gameContainer.appendChild(moreDots);
-  console.log(newDot);
   movingDot(newDot);
-
-
-const dotsAppear = setInterval(function() {
 }, 1000);
 
 
@@ -69,6 +69,7 @@ pause.addEventListener('click', () => {
   if (pause.innerText == "pause") {
     pause.innerText = "resume?";
     speedSetting = 0;
+    clearInterval(dotsAppear);
   } else if (pause.innerText == "resume?") {
     pause.innerText = "pause";
       if (speed.innerText == "speed: 4x") {
