@@ -1,6 +1,6 @@
 o // make dot in html
 o // hide dot in css on click
-// JS to make dots vary in sizes (from 10px to 50px) and points
+o // JS to make dots vary in sizes (from 10px to 50px) and points
 // make game container (make sure dots fill fully horizontally)
 // make score total bar with toggle speed button and pause button
 // JS to make dots move from bottom of container to top
