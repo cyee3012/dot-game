@@ -8,6 +8,7 @@ speedSetting = 30;
 speed.addEventListener('click', () => {
   if (pause.innerHTML.includes('play')) {
     speedSetting = 0;
+    alert("Please unpause the game to change the speed :)")
   } else if (speed.innerText.includes('4x')) {
   speed.innerHTML = '<p>1x</p>'
   speedSetting = 30;
