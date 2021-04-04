@@ -6,7 +6,9 @@ const gameContainer = document.querySelector('.game-container');
 // toggle speed
 speedSetting = 30;
 speed.addEventListener('click', () => {
-  if (speed.innerText == "speed: 4x") {
+  if (pause.innerText == "resume?") {
+    speedSetting = 0;
+  } else if (speed.innerText == "speed: 4x") {
   speed.innerText = "speed: 1x"
   speedSetting = 30;
   } else if ( speed.innerText == "speed: 1x") {
