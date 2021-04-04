@@ -57,10 +57,14 @@ const moveDot = (dot) => {
   }, 1000);
 // click to make dot disappear
 dot.addEventListener('click', () => {
-  dot.style.display = 'none';
-  score.innerText = `${parseInt(score.innerText)+parseInt(dot.dataset.points)}`;
-  dot.style.bottom = 0;
-  clearInterval(dotMovement);
+  if (pause.innerText == "resume?") {
+     alert("DON'T CHEAT!!!");
+  } else if (pause.innerText == "pause") {
+    dot.style.display = 'none';
+    score.innerText = `${parseInt(score.innerText)+parseInt(dot.dataset.points)}`;
+    dot.style.bottom = 0;
+    clearInterval(dotMovement);
+  };
 });
   return dot
 };
