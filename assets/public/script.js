@@ -63,9 +63,7 @@ dot.addEventListener('click', () => {
   return dot
 };
 
-
-// // duplicate dot
-const dotsAppear = setInterval(function() {
+let dotsAppear = setInterval(function() {
   moveDot(createDot());
 }, 1000);
 
@@ -80,10 +78,19 @@ pause.addEventListener('click', () => {
     pause.innerText = "pause";
       if (speed.innerText == "speed: 4x") {
        speedSetting = 120;
+       dotsAppear = setInterval(function() {
+        moveDot(createDot());
+      }, 1000);
       } else if (speed.innerText == "speed: 2x") {
         speedSetting = 60;
+        dotsAppear = setInterval(function() {
+          moveDot(createDot());
+        }, 1000);
       } else if (speed.innerText == "speed: 1x") {
         speedSetting = 30;
+        dotsAppear = setInterval(function() {
+          moveDot(createDot());
+        }, 1000);
       };
     };
 });

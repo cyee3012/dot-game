@@ -10,6 +10,7 @@ h1 {
   width: 300px;
   background: #EEF9FC;
   position: relative;
+  overflow: hidden;
 }
 
 .bar {
