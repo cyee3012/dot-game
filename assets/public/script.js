@@ -6,16 +6,16 @@ const gameContainer = document.querySelector('.game-container');
 // toggle speed
 speedSetting = 30;
 speed.addEventListener('click', () => {
-  if (pause.innerText == "resume?") {
+  if (pause.innerHTML.includes('play')) {
     speedSetting = 0;
-  } else if (speed.innerText == "speed: 4x") {
-  speed.innerText = "speed: 1x"
+  } else if (speed.innerText.includes('4x')) {
+  speed.innerHTML = '<p>1x</p>'
   speedSetting = 30;
-  } else if ( speed.innerText == "speed: 1x") {
-    speed.innerText = "speed: 2x"
+  } else if (speed.innerText.includes('1x')) {
+    speed.innerHTML = '<p>2x</p>'
     speedSetting = 60;
-  } else if (speed.innerText == "speed: 2x") {
-    speed.innerText = "speed: 4x"
+  } else if (speed.innerText.includes('2x')) {
+    speed.innerHTML = '<p>4x</p>'
     speedSetting = 120;
   }
 });
@@ -56,16 +56,16 @@ const moveDot = (dot) => {
     dot.style.bottom = newPositon +"px";
   }, 1000);
 // click to make dot disappear
-dot.addEventListener('click', () => {
-  if (pause.innerText == "resume?") {
-     alert("DON'T CHEAT!!!");
-  } else if (pause.innerText == "pause") {
-    dot.style.display = 'none';
-    score.innerText = `${parseInt(score.innerText)+parseInt(dot.dataset.points)}`;
-    dot.style.bottom = 0;
-    clearInterval(dotMovement);
-  };
-});
+  dot.addEventListener('click', () => {
+    if (pause.innerHTML.includes('play')) {
+       alert("DON'T CHEAT!!!");
+    } else if (pause.innerHTML.includes('pause')) {
+      dot.style.display = 'none';
+      score.innerText = `${parseInt(score.innerText)+parseInt(dot.dataset.points)}`;
+      dot.style.bottom = 0;
+      clearInterval(dotMovement);
+    };
+  });
   return dot
 };
 
@@ -76,23 +76,23 @@ let dotsAppear = setInterval(function() {
 
 // pause game
 pause.addEventListener('click', () => {
-  if (pause.innerText == "pause") {
-    pause.innerText = "resume?";
+  if (pause.innerHTML.includes('pause')) {
+    pause.innerHTML = '<i class="far fa-play-circle"></i>';
     speedSetting = 0;
     clearInterval(dotsAppear);
-  } else if (pause.innerText == "resume?") {
-    pause.innerText = "pause";
-      if (speed.innerText == "speed: 4x") {
+  } else if (pause.innerHTML.includes('play')) {
+    pause.innerHTML = '<i class="far fa-pause-circle"></i>';
+      if (speed.innerText.includes('4x')) {
        speedSetting = 120;
        dotsAppear = setInterval(function() {
         moveDot(createDot());
       }, 1000);
-      } else if (speed.innerText == "speed: 2x") {
+      } else if (speed.innerText.includes('2x')) {
         speedSetting = 60;
         dotsAppear = setInterval(function() {
           moveDot(createDot());
         }, 1000);
-      } else if (speed.innerText == "speed: 1x") {
+      } else if (speed.innerText.includes('1x')) {
         speedSetting = 30;
         dotsAppear = setInterval(function() {
           moveDot(createDot());
